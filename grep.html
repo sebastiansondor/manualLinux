@@ -1,0 +1,214 @@
+<!-- Sebastián Sondor -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" http-equiv="Content-Type" content="text/html"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>GREP</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style-ss.css">
+	</head>
+    <body>
+		<header>
+			<h1>ComandosLinux</h1>
+			
+		</header>
+		<div class="container">
+			<aside class="aside">
+				<h2>Indice</h2>
+				<ul>
+					<li><a href="">chmod</a></li>
+					<li><a href="">grep</a></li>
+					<li><a href="">sort</a></li>
+				</ul>
+			</aside>
+			<div class="content">
+				<main>
+					<section>
+						<h1>Grep</h1>
+						<p>El comando grep facilita te permite buscar palabras o 
+						cadenas de texto en archivos o en la entrada estándar de 
+						la terminal. Cuando localiza lo que buscas, grep muestra 
+						las líneas completas que contienen esa información específica.</p>
+						
+					</section>
+					<section>
+						<h2>Sintaxis</h2>
+						<p>La sintaxis del comando grep al buscar un solo archivo es así:</p>
+							<div class="sintaxis">grep [opciones] 'cadena_de_texto' [ARCHIVO]</div>
+							
+					</section>
+					<section id="section3">
+						
+						<h2>Opciones</h2>
+						<p>Como puedes ver, el comando nos ofrece muchas posibilidades. 
+						Sin embargo, las opciones más importantes y comunes son:</p>
+						<ul>
+							<li>
+								<b>-i: </b>la búsqueda no distinguirá entre mayúsculas y minúsculas. 
+								Es decir, si quieres buscar la palabra 'auto' será lo mismo que 'AUTO'
+								<br><br>
+								<div class="window">
+									<div class="title-bar">
+										<div class="circle-container">
+											<div class="circle red"></div>
+											<div class="circle yellow"></div>
+											<div class="circle green"></div>
+										</div>
+									</div>
+									<div class="terminal">
+										<div class="comando">
+										<span class="usuario">ubuntu@ubuntu</span>:<span class="virguililla">~</span>$
+										grep -i 'maria' archivo.txt
+										<br>
+										Maria usó el comando grep
+										</div>
+										
+									</div>
+								</div>
+								<br>
+							</li>
+							<li>
+								<b>-c: </b>solo mostrará el número de líneas que coinciden con el patrón buscado.
+								<br><br>
+								<div class="window">
+									<div class="title-bar">
+										<div class="circle-container">
+											<div class="circle red"></div>
+											<div class="circle yellow"></div>
+											<div class="circle green"></div>
+										</div>
+									</div>
+									<div class="terminal">
+										<div class="comando">
+										<span class="usuario">ubuntu@ubuntu</span>:<span class="virguililla">~</span>$
+										grep -c 'Maria' archivo.txt
+										<br>
+										2
+										<!-- 
+										Maria usó el comando grep
+										<br>
+										aun asi el profesor de Maria no le entendió
+										-->
+										</div>
+										
+									</div>
+								</div>
+								<br>
+							</li>
+							<li>
+								<b>-r: </b>habilita la búsqueda recursiva en el directorio actual.
+								<br><br>
+								<div class="window">
+									<div class="title-bar">
+										<div class="circle-container">
+											<div class="circle red"></div>
+											<div class="circle yellow"></div>
+											<div class="circle green"></div>
+										</div>
+									</div>
+									<div class="terminal">
+										<div class="comando">
+										<span class="usuario">ubuntu@ubuntu</span>:<span class="virguililla">~</span>$
+										grep -r 'Maria' directorioGrep
+										<br>
+										directorioGrep/grep1/pp2.txt:El profesor de Maria está de baja
+										<br>
+										directorioGrep/pp1.txt:Maria usó el comando grep
+										</div>
+										
+									</div>
+								</div>
+								<br>
+							</li>
+							<li>
+								<b>-n: </b>busca líneas y precede cada línea coincidente con un número de línea.
+								<br><br>
+								<div class="window">
+									<div class="title-bar">
+										<div class="circle-container">
+											<div class="circle red"></div>
+											<div class="circle yellow"></div>
+											<div class="circle green"></div>
+										</div>
+									</div>
+									<div class="terminal">
+										<div class="comando">
+										<span class="usuario">ubuntu@ubuntu</span>:<span class="virguililla">~</span>$
+										grep -n 'Maria' archivo.txt
+										<br>
+										1:Maria aprendió a usar el comando grep
+										<br>
+										2:Aun asi el profesor de Maria no le entendió
+										</div>
+										
+									</div>
+								</div>
+								<br>
+							</li>
+							<li>
+								<b>-v: </b>con esta opción, se nos muestran las líneas que no coinciden con el patrón que hemos buscado.
+								<br><br>
+								<div class="window">
+									<div class="title-bar">
+										<div class="circle-container">
+											<div class="circle red"></div>
+											<div class="circle yellow"></div>
+											<div class="circle green"></div>
+										</div>
+									</div>
+									<div class="terminal">
+										<div class="comando">
+										<span class="usuario">ubuntu@ubuntu</span>:<span class="virguililla">~</span>$
+										grep -i 'Maria' archivo.txt
+										<br>
+										Por eso la alumna suspendió	
+										</div>
+										
+									</div>
+								</div>
+								<br>
+							</li>
+						</ul>
+					</section>
+					<section class="ejemplo">
+						<h2>Ejemplos de uso</h2>
+						<p>Digamos que estás buscando en un directorio todas las líneas que contienen la palabra "error" en archivos de texto 
+							que se encuentran dentro de un directorio y sus subdirectorios, 
+							sin importar mayúsculas o minúsculas, y deseas ver el número de línea en cada ocurrencia.</p>
+						<!-- 
+							El div window tiene que copiarse entero cada vez que quiera usarse para mostrar un ejemplo del uso del comando
+						-->
+						<div class="window">
+							<div class="title-bar">
+								<div class="circle-container">
+									<div class="circle red"></div>
+									<div class="circle yellow"></div>
+									<div class="circle green"></div>
+								</div>
+							</div>
+							<div class="terminal">
+								<div class="comando">
+								<span class="usuario">ubuntu@ubuntu</span>:<span class="virguililla">~</span>$
+								grep -rin 'error' directorioGrep
+								<br>
+								directorioGrep/grep1/archivo2.txt: 3: No hay ningún error en este archivo.
+								<br>
+								directorioGrep/grep1/archivo2.txt: 4: Probemos buscar la palabra "error" y ver qué sucede.
+								<br>
+								directorioGrep/grep1/archivo2.txt: 5: La palabra "ERROR" también debería ser capturada.
+								<br>
+								directorioGrep/archivo.txt: 5: Esta línea no contiene ningún error.
+								</div>
+							</div>
+						</div>
+						<br>
+						<p>Al introducir este comando mostrará todas las líneas que contiene la palabra "error", sin importar mayúsculas o minúsculas, 
+							y mostrará el número de línea para cada ocurrencia encontrada, en el directorio indicado y en sus subdirectorios</p>
+						<hr>
+					</section>
+				</main>
+			</div>
+		</div>
+	</body>
+</html>

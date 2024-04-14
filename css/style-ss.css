@@ -1,0 +1,18 @@
+/* Sebastián Sondor*/
+
+.sintaxis{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+    margin-left:70px;
+}
+.ejemplo .window{
+    width: 80%;
+    transition: all 0.2s ease;
+    box-shadow: 3px 5px 8px 0px rgba(0,0,0,0.5);
+}
+.ejemplo .window:hover{
+    transform: scale(1.05);
+}

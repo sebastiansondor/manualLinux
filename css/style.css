@@ -1,0 +1,110 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    margin: 0px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top:0px;
+    width: 100%;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+}
+.container{
+    display: flex;
+}
+section {
+    scroll-margin-top: 100px; /* Altura del header */
+}
+.content {
+    margin-left: 250px; /* Width of the aside */
+    padding: 20px;
+    width: calc(100% - 250px); /* Subtract width of the aside */
+}
+aside {
+    padding: 10px;
+    width: 250px;
+    background-color: #f2f2f2;
+    position: fixed;
+    height: calc(100% - 100px); /* Resta el alto del header */
+    overflow-y: auto;
+    z-index: 100; /* Asegura que el aside esté detrás del header */
+}
+aside a{
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    margin-right: 5px;
+}
+/* hace un peque�o resalto al pasar el raton por encima del enlace*/
+aside a:hover{
+    background-color: #ccc;
+    transform: scale(1.1);
+}
+
+main {
+    padding: 10px;
+}
+
+/* Estilos para los círculos de colores */
+.circle-container {
+    margin-top: 5px;
+    margin-left: 5px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80px;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+/* Estilos para la ventana de la terminal */
+.window {
+    background-color: #f6f7f8;
+    border: 1px solid #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    width: 70%;
+    overflow: hidden;
+    position: relative;
+    margin-left: 30px; 
+	display:flex;
+	flex-direction:column;
+}
+.terminal {
+    background-color: #000;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    border-radius: 5px;
+    border-start-start-radius: 0px;
+    width: 100%;
+    overflow-y: auto;
+}
+.usuario{
+    color: #4fce62;
+}
+.virguililla{
+    color:lightblue;
+}
