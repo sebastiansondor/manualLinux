@@ -1,6 +1,6 @@
 # manualLinux
 
-Bienvenido al repositorio. Aquí encontrarás los siguientes archivos HTML:
+Bienvenido al manual de comandos de Linux. Aquí encontrarás cómo usar los siguientes comandos:
 
 1. [Grep](grep.html)
 <!-- 
