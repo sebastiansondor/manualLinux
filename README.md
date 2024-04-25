@@ -2,8 +2,9 @@
 
 Bienvenido al manual de comandos de Linux. Aquí encontrarás cómo usar los siguientes comandos:
 
-1. [Grep](grep.html)
+1. [Chmod](index.html)
+2. [Grep](grep.html)
 <!-- 
-2. [Chmod](chmod.html)
 3. [Sort](sort.html)
 -->
+Práctica conjunta de Entornos de Desarrollo y Sistemas Informáticos realizada por Missell VD y Sebastian S.
