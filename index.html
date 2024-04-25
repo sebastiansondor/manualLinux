@@ -1,0 +1,202 @@
+<!-- Author: Missell VD -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" http-equiv="Content-Type" content="text/html"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CHMOD</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+    <body>
+		<header>
+			<h1>ComandosLinux</h1>
+		</header>
+		<div class="container">
+			<aside class="aside">
+				<h2>Indice</h2>
+				<ul>
+					<li><a href="">chmod</a></li>
+					<li><a href="">grep</a></li>
+					<li><a href="">sort</a></li>
+				</ul>
+			</aside>
+			<div class="content">
+				<main>
+					<section>
+						<h1>Chmod</h1>
+						<p>Los permisos de archivo son las restricciones que tiene ese archivo para realizar operaciones
+						con el. Estas operaciones pueden ser:</p>
+						<ul>
+							<li>Lectura</li>
+							<li>Escritura(modificacion)</li>
+							<li>Ejecucion</li>
+						</ul>
+						<p>Cada archivo o directorio en sistemas Linux tiene una serie de permisos que se expresan a su vez
+						en tres tipos de usuarios distintos.</p>
+						<ul>
+							<li>Usuario: el usuario al que pertenece el archivo</li>
+							<li>Grupo: el grupo al que pertenece el usuario</li>
+							<li>Otros: todos los demas usuarios</li>
+						</ul>
+						<p>Cuando hacemos un listado de directorio, usando el comando ls -l en un sistema Linux se muestran
+						los permisos para cada archivo o directorio.</p><br>
+					</section>
+					<section>
+						<h2>Grupos de permisos:</h2>
+						<table style="text-align: center; padding: 0px 25px;">
+							<tr>
+								<td style="color: purple;">1</td>
+								<td style="color: purple;">2</td>
+								<td style="color: purple;">3</td>
+								<td style="color: purple;">4</td>
+							</tr>
+							<tr>
+								<td style="border: 1px solid purple; padding: 15px;">C</td>
+								<td style="border: 1px solid purple; padding: 15px;">C1   C2   C3</td>
+								<td style="border: 1px solid purple; padding: 15px;">C1   C2   C3</td>
+								<td style="border: 1px solid purple; padding: 5px;">C1   C2   C3</td>
+							</tr>
+							<tr>
+								<td style="padding: 15px;">1 caracter</td>
+								<td style="padding: 15px;">3 caracteres</td>
+								<td style="padding: 15px;">3 caracteres</td>
+								<td style="padding: 15px;">3 caracteres</td>
+							</tr>
+							<tr>
+								<td><b>d</b> directorio<br><b>-</b> fichero</td>
+								<td><b>USUARIO (U)</b></td>
+								<td><b>GRUPO (G)</b></td>
+								<td><b>OTROS (O)</b></td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h2>Sintaxis</h2>
+						<p>La sintaxis del comando <b>chmod</b> es asi:</p>
+						<p><b>Asignar permisos: </b>chmod [opciones] grupoUsuario=permisos [nombreArchivo/nombreDirectorio]</p>
+						<p><b>Asignar permisos: </b>chmod [opciones] grupoUsuario+permisos [nombreArchivo/nombreDirectorio]</p>
+						<p><b>Quitar permisos:</b> chmod [opciones] grupoUsuario-permisos [nombreArchivo/nombreDirectorio]</p>
+						<p>Para asignar permisos a varios grupos de usuarios en una linea de comando se separan los modos por coma</p>
+						<h4>Permisos:</h4>
+						<ul>
+							<li>C1 = {-,r} --> Puede o no leer archivos/directorios(read)</li><br>
+							<li>C2 = {-,w} --> Puede o no escribir archivos/directorios(write)</li><br>
+							<li>C3 = {-,x} --> Puede o no ejecutar los archivos/directorios(execute)</li><br>
+						</ul>
+						<h4>Grupos de Usuario:</h4>
+						<ul>
+							<li>u: usuario</li><br>
+							<li>g: grupo de usuarios del fichero</li><br>
+							<li>o: otros usuarios</li><br>
+							<li>a: todos los tipos de usuario(u,g,o)</li><br>
+						</ul>
+					</section>
+					<section>
+						<h2>Opciones</h2>
+						<p>Como puedes ver, el comando nos ofrece muchas posibilidades. 
+						Sin embargo, las opciones mas importantes y comunes son:</p>
+						<ul>
+							<li>
+								<b>-r: </b>para que mire tambien en los subdirectorios de la ruta<br><br>
+								<div class="window">
+									<div class="title-bar">
+										<div class="circle-container">
+											<div class="circle red"></div>
+											<div class="circle yellow"></div>
+											<div class="circle green"></div>
+										</div>
+									</div>
+									<div class="terminal">
+										<div class="comando">
+										<span class="usuario">ubuntu@ubuntu</span>:<span class="virguililla">~</span>$
+										chmod -r u=rwx archivo.txt
+										</div>
+										
+									</div>
+								</div>
+								<br>
+							</li>
+							<li>
+								<b>-v: </b>para que muestre cada fichero procesado<br><br>
+								<div class="window">
+									<div class="title-bar">
+										<div class="circle-container">
+											<div class="circle red"></div>
+											<div class="circle yellow"></div>
+											<div class="circle green"></div>
+										</div>
+									</div>
+									<div class="terminal">
+										<div class="comando">
+										<span class="usuario">ubuntu@ubuntu</span>:<span class="virguililla">~</span>$
+										chmod -v a+rwx archivo.txt
+										</div>
+										
+									</div>
+								</div>
+								<br>
+							</li>
+							<li>
+								<b>-c: </b>es como -v, pero solo avisa de los ficheros que modifica sus permisos<br><br>
+								<div class="window">
+									<div class="title-bar">
+										<div class="circle-container">
+											<div class="circle red"></div>
+											<div class="circle yellow"></div>
+											<div class="circle green"></div>
+										</div>
+									</div>
+									<div class="terminal">
+										<div class="comando">
+										<span class="usuario">ubuntu@ubuntu</span>:<span class="virguililla">~</span>$
+										chmod -c o-rwx archivo.txt
+										</div>
+										
+									</div>
+								</div>
+								<br>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Ejemplos de uso</h2>
+						<p>Asigna permisos de lectura, escritura y ejecucion para los usuarios "otros" a todos los archivos de la carpeta</p>
+						<div class="window">
+							<div class="title-bar">
+								<div class="circle-container">
+									<div class="circle red"></div>
+									<div class="circle yellow"></div>
+									<div class="circle green"></div>
+								</div>
+							</div>
+							<div class="terminal">
+								<div class="comando">
+								<span class="usuario">ubuntu@ubuntu</span>:<span class="virguililla">~</span>$
+								chmod o=rwx *
+								</div>
+								
+							</div>
+						</div>
+						<br><br>
+						<p>Asigna permisos de lectura, escritura y ejecucion para los usuarios y ningún permiso para el resto, hazlo con todos los archivos de texto del directorio y los subdirectorios</p>
+						<div class="window">
+							<div class="title-bar">
+								<div class="circle-container">
+									<div class="circle red"></div>
+									<div class="circle yellow"></div>
+									<div class="circle green"></div>
+								</div>
+							</div>
+							<div class="terminal">
+								<div class="comando">
+								<span class="usuario">ubuntu@ubuntu</span>:<span class="virguililla">~</span>$
+								chmod -r u=rwx *.txt
+								</div>
+							</div>
+						</div>
+					</section>
+				</main>
+			</div>
+		</div>
+	</body>
+</html>
