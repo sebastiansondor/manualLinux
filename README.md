@@ -1,7 +1,9 @@
 # manualLinux
 
-Bienvenido al manual de comandos de Linux. Aquí encontrarás cómo usar los siguientes comandos:
+Bienvenido al manual de comandos de Linux. 
 Enlace a la visualización de la [página](https://sebastiansondor.github.io/manualLinux/index.html)
+
+Aquí encontrarás cómo usar los siguientes comandos:
 
 1. [Chmod](index.html)
 2. [Grep](grep.html)
